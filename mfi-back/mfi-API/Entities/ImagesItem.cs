@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Entities
 {
-    internal class ServiceContext
+    public class ImagesItem
     {
     }
 }
