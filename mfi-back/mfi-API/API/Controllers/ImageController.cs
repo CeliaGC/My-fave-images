@@ -10,13 +10,13 @@ namespace Apii.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("[controller]/[action]")]
-    public class ProductController : ControllerBase
+    public class ImageController : ControllerBase
     {
 
         private readonly IImageService _imageService;
         private readonly ServiceContext _serviceContext;
 
-        public ProductController(IImageService imageService, ServiceContext serviceContext)
+        public ImageController(IImageService imageService, ServiceContext serviceContext)
         {
             _imageService = imageService;
             _serviceContext = serviceContext;
