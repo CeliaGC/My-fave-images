@@ -20,8 +20,8 @@ const apiClient = axios.create({
         let product = response.data;
         return product;
     },
-    async submitProduct(newProduct){
-        await apiClient.post("/products", newProduct)
+    async submitImage(newImage){
+        await apiClient.post("/Image/Post", newImage)
     },
     async deleteImage(id){
         axios.delete('https://localhost:7200/Image/Delete?Id=' + id)

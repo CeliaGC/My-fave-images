@@ -1,25 +1,27 @@
 import ImageService from "../Service/ImageService";
 
+
+
 export const ImageHandler = {
-    addProduct(newProduct){
-        // console.log(newProduct);
-        if (!newProduct) {
-            return;
-        }
 
-        let product = {
-            "name": newProduct.productName,
-            "price": newProduct.price,
-            "img": newProduct.productPicture,
-            "category": newProduct.category,
-            "productStatus": newProduct.productState,
-            "unit": newProduct.units,
-            "description": newProduct.description,
-            "date": new Date(),
-            "id": ""
+    addImage(newImage){
 
+        // if (!newImage) {
+        //     return;
+        // }
+
+        let image = {
+
+            // "id":newImage.id,
+            "imageName": newImage.imageName,  
+           
+            "category": newImage.category,
+            "ImageSource": newImage.ImageSource,
+            // "idWeb":newImage.idWeb,
+            // "insertDate": newImage.insertDate,
+            // "isActive": newImage.isActive
         }
-        return ProductService.submitProduct(product);
+        return ImageService.submitImage(image);
         //return product;
     },
     loadImages(){
