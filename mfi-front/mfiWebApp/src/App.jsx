@@ -1,21 +1,15 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import ImageService from './Service/ImageService'
+import ImageHandler from './Handler/ImageHandler'
+import ImagesList from './components/ImagesList'
 
 function App() {
+
+  // borra el count si no lo vas a usar
   const [count, setCount] = useState(0)
-  const [images, setImages] = useState([]);
+  
 
-  useEffect(() => {
-    getData();
-  }, []);
-  const getData = async () => {
-    const data = await ImageService.getImages();
-    setImages(data);
-  };
-
-  let myImages = images;
+ 
 
   return (
     <div className="App">
@@ -26,13 +20,7 @@ function App() {
           count is {count}
         </button>
 
-        {myImages.map(i => (
-          <div key={i.id}>
-              <img src= {i.imageSource} alt="" />
-              <h3>{i.imageName}</h3>
-            
-          </div>
-        ))}
+        <ImagesList />
 
         
 

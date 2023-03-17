@@ -23,8 +23,8 @@ const apiClient = axios.create({
     async submitProduct(newProduct){
         await apiClient.post("/products", newProduct)
     },
-    async deleteProduct(id){
-        await apiClient.delete("/products/" + id)
+    async deleteImage(id){
+        axios.delete('https://localhost:7200/Image/Delete?Id=' + id)
     },
     async updateProduct(id, updatedProduct){
         await apiClient.patch("/products/" + id, updatedProduct)
