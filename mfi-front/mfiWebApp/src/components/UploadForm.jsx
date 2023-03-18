@@ -11,14 +11,14 @@ import { v4 as uuidv4 } from 'uuid';
 function UpLoadForm() {
   const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm();
 
-//   const handleImageChange = (event) => {
-//     const picture = event.target.files[0];
-//     const reader = new FileReader();
-//     reader.readAsDataURL(picture);
-//     reader.onload = () => {
-//       setValue("imageSource", reader.result);
-//     };
-//   }
+  const handleImageChange = (event) => {
+    const picture = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(picture);
+    reader.onload = () => {
+      setValue("imageSource", reader.result);
+    };
+  }
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -66,8 +66,8 @@ function UpLoadForm() {
 
         <fieldset>
 
-          {/* <input id="ImageSource" placeholder='SELECT' type="file" onChange={handleImageChange} /> */}
-          <input id="ImageSource" placeholder='URL'{...register("ImageSource", { required: true })} />
+          <input id="ImageSource" placeholder='SELECT' type="file" onChange={handleImageChange} />
+          {/* <input id="ImageSource" placeholder='URL'{...register("ImageSource", { required: true })} /> */}
           {errors.ImageSource && <span>Debe rellenar este campo</span>}
 
           {/* <div id="term">
